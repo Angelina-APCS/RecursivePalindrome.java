@@ -7,6 +7,14 @@ public class RecursivePalindrome {
     public static boolean isPalindrome(String s) {
         // String.charAt(int i): returns the character at index i
         // Return a boolean
+        if (s.length() == 0 || s.length() == 1){
+            return true;
+        }
+        if (s.charAt(0) != s.charAt(s.length()-1)){
+            return false;
+        } else {
+            return isPalindrome(s.substring(1, s.length()-1));
+        }
     }
 
     public static void main (String[] args) {
